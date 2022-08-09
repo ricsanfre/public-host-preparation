@@ -1,0 +1,4 @@
+---
+roles:
+  - name: ricsanfre.docker
+    version: v1.0.1

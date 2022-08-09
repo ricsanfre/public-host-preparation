@@ -1,0 +1,17 @@
+---
+- name: Deploy
+  hosts: web
+  become: true
+  gather_facts: true
+  vars:
+    docker_daemon_options:
+      exec-opts:
+        - "native.cgroupdriver=systemd"
+      log-driver: "json-file"
+      log-opts:
+        max-size: "100m"
+      data-root: "/var/docker/lib"
+    docker_users:
+      - ubuntu
+  roles:
+    - role: ricsanfre.docker
