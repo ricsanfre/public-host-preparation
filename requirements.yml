@@ -3,4 +3,4 @@ roles:
   - name: ricsanfre.docker
     version: v1.0.1
   - name: ricsanfre.backup
-    version: v1.1.0
+    version: v1.1.2
