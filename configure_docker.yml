@@ -1,0 +1,7 @@
+---
+- name: Configure docker
+  hosts: oci-web
+  become: true
+  gather_facts: true
+  roles:
+    - role: ricsanfre.docker
