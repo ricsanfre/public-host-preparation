@@ -15,6 +15,7 @@ restic_backups_dirs:
       - pattern: '.ansible'
       - pattern: '.ansible-async'
       - pattern: '.mozilla'
+      - pattern: 'PY_VENV'
   - path: '/etc/restic'
   - path: '/root'
     exclude:
