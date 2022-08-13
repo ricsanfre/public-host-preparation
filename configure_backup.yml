@@ -1,0 +1,12 @@
+---
+
+- name: Configure backup
+  hosts: all
+  gather_facts: true
+  become: true
+  pre_tasks:
+    - name: Load google service account
+      include_tasks: tasks/load_google_service_account.yml
+      when: rclone_configure
+  roles:
+    - role: ricsanfre.backup

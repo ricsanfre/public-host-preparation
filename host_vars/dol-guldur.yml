@@ -1,0 +1,24 @@
+---
+
+# Specific vars
+restic_backups_dirs:
+  - path: '/home/ricardo'
+    exclude:
+      - pattern: '*.log'
+      - pattern: '.cache'
+      - pattern: '.local'
+      - pattern: 'snap'
+      - pattern: 'Downloads'
+      - pattern: '.bundle'
+      - pattern: 'gems'
+      - pattern: '.gem'
+      - pattern: '.ansible'
+      - pattern: '.ansible-async'
+      - pattern: '.mozilla'
+  - path: '/etc/restic'
+  - path: '/root'
+    exclude:
+      - pattern: '.cache'
+      - pattern: '*.log'
+      - pattern: 'snap'
+restic_enable_pre_backup_scripts: false

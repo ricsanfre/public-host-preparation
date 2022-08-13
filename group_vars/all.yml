@@ -1,0 +1,36 @@
+---
+
+# Docker role variable
+# ---------------------
+docker_daemon_options:
+  exec-opts:
+    - "native.cgroupdriver=systemd"
+  log-driver: "json-file"
+  log-opts:
+    max-size: "100m"
+  data-root: "/var/docker/lib"
+docker_users:
+  - ubuntu
+
+# Backup role variables
+# ----------------------
+
+restic_user: "root"
+restic_group: "root"
+restic_version: 0.13.1
+google_service_account: ""
+restic_user_home: ""
+restic_repository: "rclone:gdrive:backup"
+restic_password: SUPERSECRETO
+# Backup timer configuration
+restic_backup_systemd_timer_on_calender: '*-*-* 01:00:00'
+restic_clean_systemd_timer_on_calender: '*-*-* 03:00:00'
+rclone_install: true
+rclone_configure: true
+rclone_config_file: |
+  [gdrive]
+  type = drive
+  scope = drive
+  service_account_file = {{ restic_user_home }}/.gdrive/google_service_account.json
+  team_drive =
+  shared_with_me = true

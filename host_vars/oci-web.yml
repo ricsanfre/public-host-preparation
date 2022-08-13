@@ -1,0 +1,24 @@
+---
+
+# Specific vars
+restic_backups_dirs:
+  - path: '/home/ubuntu'
+    exclude:
+      - pattern: '*.log'
+      - pattern: '.cache'
+      - pattern: 'mywebsite'
+      - pattern: 'matomo/db'
+      - pattern: 'matomo/www-data/*'
+      - pattern: '!matomo/www-data/config'
+      - pattern: 'remark42/var/*'
+      - pattern: '!remark42/var/backup'
+  - path: '/etc/restic'
+  - path: '/root'
+    exclude:
+      - pattern: '.cache'
+      - pattern: '*.log'
+      - pattern: 'snap'
+restic_enable_pre_backup_scripts: true
+restic_pre_backup_script:
+  - name: matomo_mysql_backup.sh
+    content: "{{ lookup('file', 'files/matomo_mysql_backup.sh') }}"
