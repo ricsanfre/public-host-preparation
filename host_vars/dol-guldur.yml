@@ -13,9 +13,11 @@ restic_backups_dirs:
       - pattern: 'gems'
       - pattern: '.gem'
       - pattern: '.ansible'
-      - pattern: '.ansible-async'
+      - pattern: '.ansible_async'
       - pattern: '.mozilla'
       - pattern: 'PY_VENV'
+      - pattern: '.config/*'
+      - pattern: '!.config/rclone'
   - path: '/etc/restic'
   - path: '/root'
     exclude:

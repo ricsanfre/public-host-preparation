@@ -1,0 +1,14 @@
+---
+
+# Specific vars
+restic_backups_dirs:
+  - path: '/home/ubuntu'
+  - path: '/etc/restic'
+  - path: '/etc/minio'
+  - path: '/etc/vault'
+  - path: '/root'
+    exclude:
+      - pattern: '.cache'
+      - pattern: '*.log'
+      - pattern: 'snap'
+restic_enable_pre_backup_scripts: false

@@ -1,5 +1,6 @@
 [internet]
 oci-web ansible_host=130.61.142.49
+oci-backup ansible_host=158.101.162.196
 
 [internet:vars]
 ansible_ssh_user=ubuntu

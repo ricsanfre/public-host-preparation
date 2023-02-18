@@ -1,6 +1,6 @@
 ---
 - name: Configure docker
-  hosts: oci-web
+  hosts: internet
   become: true
   gather_facts: true
   roles:
